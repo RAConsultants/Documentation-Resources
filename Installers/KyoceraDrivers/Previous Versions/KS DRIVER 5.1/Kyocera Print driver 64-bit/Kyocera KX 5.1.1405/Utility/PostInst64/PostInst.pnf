@@ -1,0 +1,25 @@
+
+[Version]
+Provider   = Kyocera
+Version  = 05/09/2007,1.4.15.3
+
+[Information]
+SourcePath = .
+
+[SourcePath]
+
+[TargetPath]
+
+[Install]
+ExecFiles = AppInstall
+
+[Install.Generic mono]
+ExecFiles = NOTHING
+
+[Install.Generic Color]
+ExecFiles = NOTHING
+
+[AppInstall]
+InstallCmd = Utility\PostInst64\PostSetup.exe
+
+[NOTHING]

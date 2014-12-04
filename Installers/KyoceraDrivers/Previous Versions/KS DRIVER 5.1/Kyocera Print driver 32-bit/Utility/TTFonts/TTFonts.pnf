@@ -1,0 +1,53 @@
+
+[Version]
+Provider   = Kyocera
+Version  = 03/09/2007,1.0.0309
+
+[Information]
+SourcePath = .
+
+[SourcePath]
+KMCOPY64 = "Utility"
+INSTCM = "Utility"
+KCFONT = "Utility\PostInst"
+
+[TargetPath]
+KCFONT = "<MainTarget>/Utility/PostInst"
+INSTCM = "<MainTarget>/Utility"
+KMCOPY64 = "<MainTarget>/Utility"
+
+[Install]
+CopyFiles = INSTCM,KCFONT
+ExecFiles = AppInstall
+
+[Install.x64]
+CopyFiles = INSTCM,KCFONT,KMCOPY64
+ExecFiles = AppInstall
+
+[Remove]
+ExecFiles = AppRemove
+
+[Remove.x64]
+ExecFiles = AppRemove
+
+[Verify]
+VerifyApps = verApp
+
+[verApp]
+CompareVersion = VERIFY_FILE,"agfa161\11547.TTF","<WindowsDir>\Fonts\11547.TTF"
+
+[KMCOPY64]
+KmCopy64.exe
+
+[INSTCM]
+KmInstCm.exe
+
+[KCFONT]
+KcFontInst.dll
+
+[AppInstall]
+InstallCmd = "Utility/KmInstCm.exe FONTS '<ModelKey>' '.' 'Utility/PostInst'"
+
+[AppRemove]
+InstallCmd = "Utility/KmInstCm.exe DELFONTS"
+Reboot = 1

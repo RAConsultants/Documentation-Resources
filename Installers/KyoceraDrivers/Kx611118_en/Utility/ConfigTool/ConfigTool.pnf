@@ -1,0 +1,53 @@
+
+[Version]
+Provider = Kyocera
+Version  = 10/28/2010,3.2.1028
+
+[Information]
+PackageKey = CONFIGTOOL
+PackageType = APP
+Category = DRIVER
+Name = "CONFIG TOOL"
+Description = %STATUSMON_DESC%
+Location = 
+MinOSVersion = 5.0
+MaxOSVersion = 10.0
+Connection = 
+Attribute = HIDE
+Required = 
+Handler = DriverDll.dll
+
+[SourcePath]
+Default = .
+
+[TargetPath]
+KMPCT = <SystemDir>\spool\drivers\w32x86\3
+
+[TargetPath.x64]
+KMPCT = <SystemDir>\spool\drivers\x64\3
+
+[Install]
+CopyFiles = KMPCT
+
+[Upgrade]
+CopyFiles = KMPCT
+
+[Remove]
+DelFiles = KMPCT
+
+
+[Verify]
+VerifyApps = verApp
+
+[verApp]
+CompareVersion = VERIFY_FILE,"Utility\ConfigTool\KMPCT.exe","<SystemDir>\spool\drivers\w32x86\3\KMPCT.exe"
+
+[verApp.x64]
+CompareVersion = VERIFY_FILE,"Utility\ConfigTool\KMPCT.exe","<SystemDir>\spool\drivers\x64\3\KMPCT.exe"
+
+[KMPCT]
+KMPCT.exe
+KMPCT2KK.exe
+KMPCT2KM.exe
+KMPCT2M1.exe
+

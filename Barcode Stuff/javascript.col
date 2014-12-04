@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colorizer xmlns="http://www.aptana.com/2007/colorizer/1.0" background="rgb(63,63,63)" caret-color="rgb(222,222,203)" folding-background="rgb(63,63,63)" folding-foreground="rgb(222,222,203)" language="text/javascript" line-highlight="rgb(69,69,69)" selection-background="rgb(163,188,174)" selection-foreground="rgb(0,0,0)">
+<category name="WHITESPACE" style="WHITESPACE">
+<token style="WHITESPACE_COMMENT" type="COMMENT"/>
+<token style="WHITESPACE_START_MULTILINE_COMMENT" type="START_MULTILINE_COMMENT"/>
+</category>
+<style foreground="rgb(127,127,127)" id="WHITESPACE"/>
+<style foreground="rgb(127,127,127)" id="WHITESPACE_COMMENT"/>
+<style foreground="rgb(127,127,127)" id="WHITESPACE_START_MULTILINE_COMMENT"/>
+<category name="LITERAL" style="LITERAL">
+<token style="LITERAL_NUMBER" type="NUMBER"/>
+<token style="LITERAL_REGEX" type="REGEX"/>
+<token style="LITERAL_NULL" type="NULL"/>
+<token style="LITERAL_TRUE" type="TRUE"/>
+<token style="LITERAL_FALSE" type="FALSE"/>
+</category>
+<style foreground="rgb(143,226,143)" id="LITERAL"/>
+<style foreground="rgb(231,126,126)" id="LITERAL_NUMBER"/>
+<style foreground="rgb(240,235,142)" id="LITERAL_REGEX"/>
+<style foreground="rgb(227,142,185)" id="LITERAL_NULL"/>
+<style foreground="rgb(227,142,185)" id="LITERAL_TRUE"/>
+<style foreground="rgb(227,142,185)" id="LITERAL_FALSE"/>
+<category name="KEYWORD" style="KEYWORD"/>
+<style foreground="rgb(124,183,241)" id="KEYWORD"/>
+<category name="ERROR" style="ERROR"/>
+<style foreground="rgb(231,126,126)" id="ERROR"/>
+<category name="PUNCTUATOR" style="PUNCTUATOR">
+<token style="PUNCTUATOR_LCURLY" type="LCURLY"/>
+<token style="PUNCTUATOR_RCURLY" type="RCURLY"/>
+</category>
+<style foreground="rgb(222,222,203)" id="PUNCTUATOR"/>
+<style font-weight="bold" foreground="rgb(222,222,203)" id="PUNCTUATOR_LCURLY"/>
+<style font-weight="bold" foreground="rgb(222,222,203)" id="PUNCTUATOR_RCURLY"/>
+<category name="IDENTIFIER" style="IDENTIFIER"/>
+<style foreground="rgb(240,235,142)" id="IDENTIFIER"/>
+</colorizer>

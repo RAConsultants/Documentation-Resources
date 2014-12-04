@@ -1,0 +1,119 @@
+CLASS USER
+
+CATEGORY !!KyoceraPolicy
+
+; Most applications will use a registry key with the naming convention 
+; Software\Policies\CompanyName\ProductName\ComponentName
+; 
+; For example:  Software\Policies\Microsoft\Windows\Printing
+ 
+   KEYNAME "Software\Policies\Kyocera Mita\Print Settings"
+
+; Print restriction policy 
+   POLICY !!PrintRestriction    
+       EXPLAIN !!PrintRestriction_Explain
+       VALUENAME "Policy Print"
+           VALUEON NUMERIC 1
+           VALUEOFF NUMERIC 2
+   END POLICY
+
+; Color restriction policy 
+   POLICY !!ColorRestriction    
+       EXPLAIN !!ColorRestriction_Explain
+       VALUENAME "Policy Color"
+           VALUEON NUMERIC 1
+           VALUEOFF NUMERIC 2
+   END POLICY
+
+
+; Ecoprint policy       
+   POLICY !!EcoprintRestriction    
+       EXPLAIN !!EcoprintRestriction_Explain
+       VALUENAME "Policy Ecoprint"
+           VALUEON NUMERIC 1
+           VALUEOFF NUMERIC 2
+   END POLICY
+
+; Duplex policy       
+   POLICY !!DuplexRestriction    
+       EXPLAIN !!DuplexRestriction_Explain
+       VALUENAME "Policy Duplex"
+           VALUEON NUMERIC 1
+           VALUEOFF NUMERIC 2
+   END POLICY
+
+; Nup policy       
+   POLICY !!NUPRestriction
+      EXPLAIN !!NUPRestriction_Explain
+
+      PART !!PagesPerSheet DROPDOWNLIST REQUIRED NOSORT
+	VALUENAME "Policy Nup"
+	ITEMLIST
+	   NAME "2" DEFAULT
+	   VALUE NUMERIC 2
+	   NAME "4"
+	   VALUE NUMERIC 4
+	   NAME "6"
+	   VALUE NUMERIC 6
+	   NAME "9"
+	   VALUE NUMERIC 9
+	   NAME "12"
+	   VALUE NUMERIC 12
+	   NAME "16"
+	   VALUE NUMERIC 16
+	   NAME "25"
+	   VALUE NUMERIC 25
+	END ITEMLIST 
+      END PART
+   END POLICY
+
+; Force A4 policy       
+   POLICY !!PapersizeRestriction
+      EXPLAIN !!PapersizeRestriction_Explain
+      VALUENAME "Policy ForceA4"
+           VALUEON NUMERIC 9	; DMPAPER_A4
+           VALUEOFF NUMERIC 0
+   END POLICY
+
+; Outlook policy       
+   POLICY !!OutlookRestriction
+      EXPLAIN !!OutlookRestriction_Explain
+      PART !!NumPages NUMERIC  
+        VALUENAME "Policy Outlook" 
+        MIN 1
+        MAX 5
+        DEFAULT 1 
+        SPIN 1  
+      END PART
+   END POLICY
+
+; QuickPrint policy       
+   POLICY !!QuickPrintRestriction
+      EXPLAIN !!QuickPrintRestriction_Explain
+      VALUENAME "Policy QuickPrint"
+           VALUEON NUMERIC 1
+           VALUEOFF NUMERIC 2
+   END POLICY
+
+END CATEGORY
+
+[Strings]
+KyoceraPolicy="Condicions del controlador de Kyocera KX"
+PrintRestriction="Restringeix la impressió"
+PrintRestriction_Explain="Impedeix als usuaris imprimir."
+ColorRestriction="Restringeix la impressió en color"
+ColorRestriction_Explain="Impedeix als usuaris imprimir en color."
+EcoprintRestriction="Força la impressió EcoPrint"
+EcoprintRestriction_Explain="Força la impressió EcoPrint, la qual utilitza menys tòner que la impressió normal."
+DuplexRestriction="Força la impressió dúplex"
+DuplexRestriction_Explain="Força la impressió en ambdues cares d'un full de paper."
+NUPRestriction="Força pàgines múltiples per full"
+NUPRestriction_Explain="Força la impressió de pàgines múltiples en un full de paper."
+PagesPerSheet="Pàgines per full:"
+PapersizeRestriction="Força la impressió A4"
+PapersizeRestriction_Explain="Força la sortida en A4 per a impressions de mida A3 i B4."
+OutlookRestriction="Força la impressió monocroma i el límit de pàgina per al Microsoft Outlook"
+OutlookRestriction_Explain="Impedeix als usuaris imprimir en color i limita el nombre de pàgines que es poden imprimir des del Microsoft Outlook."
+NumPages="Límit de pàgines:"
+QuickPrintRestriction="Mostra només la pestanya Impressió ràpida"
+QuickPrintRestriction_Explain="Mostra la pestanya Impressió ràpida i amaga totes les altres pestanyes a Preferències d'impressió."

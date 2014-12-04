@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colorizer xmlns="http://www.aptana.com/2007/colorizer/1.0" background="rgb(63,63,63)" caret-color="rgb(222,222,203)" folding-background="rgb(63,63,63)" folding-foreground="rgb(222,222,203)" language="text/xml" line-highlight="rgb(69,69,69)" selection-background="rgb(163,188,174)" selection-foreground="rgb(0,0,0)">
+<category name="WHITESPACE" style="WHITESPACE"/>
+<style foreground="rgb(127,127,127)" id="WHITESPACE"/>
+<category name="LITERAL" style="LITERAL">
+<token style="LITERAL_NAME" type="NAME"/>
+<token style="LITERAL_ENTITY_REF" type="ENTITY_REF"/>
+<token style="LITERAL_PE_REF" type="PE_REF"/>
+<token style="LITERAL_CHAR_REF" type="CHAR_REF"/>
+<token style="LITERAL_TEXT" type="TEXT"/>
+<token style="LITERAL_PI_TEXT" type="PI_TEXT"/>
+</category>
+<style foreground="rgb(143,226,143)" id="LITERAL"/>
+<style foreground="rgb(240,235,142)" id="LITERAL_NAME"/>
+<style foreground="rgb(231,126,126)" id="LITERAL_ENTITY_REF"/>
+<style foreground="rgb(231,126,126)" id="LITERAL_PE_REF"/>
+<style foreground="rgb(231,126,126)" id="LITERAL_CHAR_REF"/>
+<style foreground="rgb(222,222,203)" id="LITERAL_TEXT"/>
+<style foreground="rgb(222,222,203)" id="LITERAL_PI_TEXT"/>
+<category name="KEYWORD" style="KEYWORD"/>
+<style foreground="rgb(124,183,241)" id="KEYWORD"/>
+<category name="ERROR" style="ERROR"/>
+<style font-style="italic" foreground="rgb(255,128,128)" id="ERROR"/>
+<category name="PUNCTUATOR" style="PUNCTUATOR">
+<token style="PUNCTUATOR_NOTATION_DECL" type="NOTATION_DECL"/>
+<token style="PUNCTUATOR_END_TAG" type="END_TAG"/>
+<token style="PUNCTUATOR_CDATA_START" type="CDATA_START"/>
+<token style="PUNCTUATOR_CDATA_END" type="CDATA_END"/>
+<token style="PUNCTUATOR_GREATER_THAN" type="GREATER_THAN"/>
+<token style="PUNCTUATOR_XML_DECL" type="XML_DECL"/>
+<token style="PUNCTUATOR_ATTLIST_DECL" type="ATTLIST_DECL"/>
+<token style="PUNCTUATOR_DOCTYPE_DECL" type="DOCTYPE_DECL"/>
+<token style="PUNCTUATOR_PI_OPEN" type="PI_OPEN"/>
+<token style="PUNCTUATOR_ENTITY_DECL" type="ENTITY_DECL"/>
+<token style="PUNCTUATOR_SLASH_GREATER_THAN" type="SLASH_GREATER_THAN"/>
+<token style="PUNCTUATOR_ELEMENT_DECL" type="ELEMENT_DECL"/>
+<token style="PUNCTUATOR_QUESTION_GREATER_THAN" type="QUESTION_GREATER_THAN"/>
+<token style="PUNCTUATOR_START_TAG" type="START_TAG"/>
+</category>
+<style foreground="rgb(222,222,203)" id="PUNCTUATOR"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_NOTATION_DECL"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_END_TAG"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_CDATA_START"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_CDATA_END"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_GREATER_THAN"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_XML_DECL"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_ATTLIST_DECL"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_DOCTYPE_DECL"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_PI_OPEN"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_ENTITY_DECL"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_SLASH_GREATER_THAN"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_ELEMENT_DECL"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_QUESTION_GREATER_THAN"/>
+<style foreground="rgb(124,183,241)" id="PUNCTUATOR_START_TAG"/>
+</colorizer>

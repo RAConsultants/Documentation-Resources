@@ -1,0 +1,56 @@
+;
+; Common Variables
+; * Directories *
+;     %MAIN_TARGET%     = main target directory of the main installer
+;     %PROGRAMFILES%    = program files folder (ex. c:\Program Files)
+;     %WINDIR%          = Windows folder (ex. c:\Winnt)
+;     %SYSTEM%          = Windows System folder (ex. c:\Windows\system for Win9x, c:\Windows\system32 for NT platform)
+;     %TEMP%            = System Temporary folder
+;     %CURRENT%         = Current folder
+;     %DESKTOP%         = Windows desktop folder
+;     %STARTMENU%       = Windows Start Menu folder
+;     %DEFAULT_TARGET%  = Default target folder in this package installer
+;
+; * *
+;     %MODEL_KEY%       = Model specific key (ex. FS-1010, KM-1820, FS-1118MFP, etc.)
+;
+; * Install Section *
+;   [Setup] is the default install section
+;   [%MODEL_KEY%] is the install section of the specific model
+;                 ex. [FS-1010,FS-1118MFP] <- This section will be a install section for FS-1010 and FS-1118MFP
+;
+; * OS decoration
+;   .9x         = Win9x
+;   .nt         = NT platform
+;   .nt4        = NT 4.0
+;   .nt5        = 2K or later
+;   .ntamd64    = AMD 64 machine (XP or later)
+;   .ntia64     = IA 64 machine (XP or later)
+;
+
+[Version]
+Provider   = Kyocera
+Version  = 05/12/2006,1.0.0402
+
+[Information]
+SourcePath = .
+
+[SourcePath]
+
+[TargetPath]
+
+[Install]
+ExecFiles = AppInstall
+
+[Verify]
+VerifyApps = AppInstall
+
+[Remove]
+ExecFiles = AppRemove
+
+[AppInstall]
+InstallCmd = Network\Kprint\Kpinst.exe /s /f2c:\setup.log
+Verify = CHECK_PRODUCT_ARP,"KPrint"
+
+[AppRemove]
+RemoveCmd = UNINST_STRING_ARP,"KPrint","/x"

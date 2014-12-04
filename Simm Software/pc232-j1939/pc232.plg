@@ -1,0 +1,41 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: pc232 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\JR\LOCALS~1\Temp\RSP5AA.tmp" with contents
+[
+/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Release/pc232.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\sw\pc232-j1939\main.c"
+"C:\sw\pc232-j1939\msgs.c"
+"C:\sw\pc232-j1939\rs232.c"
+"C:\sw\pc232-j1939\uart.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JR\LOCALS~1\Temp\RSP5AA.tmp" 
+Creating temporary file "C:\DOCUME~1\JR\LOCALS~1\Temp\RSP5AB.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wsc32.obj /nologo /subsystem:console /incremental:no /pdb:"Release/pc232.pdb" /machine:I386 /out:"Release/pc232.exe" 
+".\Release\main.obj"
+".\Release\msgs.obj"
+".\Release\rs232.obj"
+".\Release\uart.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\JR\LOCALS~1\Temp\RSP5AB.tmp"
+<h3>Output Window</h3>
+Compiling...
+main.c
+msgs.c
+rs232.c
+uart.c
+Linking...
+
+
+
+<h3>Results</h3>
+pc232.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

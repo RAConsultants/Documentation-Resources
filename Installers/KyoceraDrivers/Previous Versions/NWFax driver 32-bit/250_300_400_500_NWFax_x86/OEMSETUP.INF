@@ -1,0 +1,403 @@
+;================================================================
+;
+;  OEMSETUP.INF
+;
+;  Kyocera Mita Printing System Installation Script
+;  Windows 2000 and XP (Multi Language excluding Japanese)
+;  Point & Print Version
+;  
+;  c Copyright 2000-2009 KYOCERA MITA CORPORATION
+;  c Copyright 2000-2002 KYOCERA CORPORATION
+;
+;  All Rights Reserved.
+;
+;  FAX_LIB 3.00  10/14/2009
+;
+;================================================================
+
+[Version]
+Signature  = "$Windows NT$"
+Class      = Printer
+ClassGUID  = {4D36E979-E325-11CE-BFC1-08002BE10318}
+Provider   = %KMC%
+DriverVer  = 10/14/2009,3.5.1014
+
+[ClassInstall]
+AddReg=ClassAddReg
+DelReg=ClassDelReg
+
+[ClassAddReg]
+HKR,,,,%CLASSNAME%
+HKR,,Installer,,MSPRINT.DLL
+HKR,,Icon,,-4
+HKR,,NoDisplayClass,,1
+
+[ClassDelReg]
+HKLM,"System\CurrentControlSet\Services\Class\Printer","NoUseClass"
+
+[Environment]
+UpdateInis=EnvUpdateInis
+AddReg=EnvAddReg
+
+[EnvUpdateInis]
+win.ini,Ports,"LPT1.DOS=",
+win.ini,Ports,"LPT2.DOS=",
+win.ini,Ports,"LPT3.DOS=",
+win.ini,Ports,"LPT1.OS2=",
+win.ini,Ports,"LPT2.OS2=",
+win.ini,Ports,"LPT3.OS2=",
+win.ini,windows,"Spooler=",
+win.ini,windows,"DosPrint=",
+win.ini,windows,"DeviCENotSelectedTimeout=",
+win.ini,windows,"TransmissionRetryTimeout=",
+
+[EnvAddReg]
+HKLM,"System\CurrentControlSet\Control\Print\Environments\Windows 4.0","Directory",,"CHICAGO"
+HKLM,"System\CurrentControlSet\Control\Print\Environments\Windows 4.0\Drivers",,,
+HKLM,"System\CurrentControlSet\Control\Print\Environments\Windows 4.0\Print Processors",,,
+HKLM,"System\CurrentControlSet\Control\Print\Monitors",,,
+HKLM,"System\CurrentControlSet\Control\Print\Printers",,,
+HKLM,"System\CurrentControlSet\Control\Print\Printers","StartOnBoot",1,01,00,00,00
+HKLM,"System\CurrentControlSet\Control\Print\Providers",,,
+
+;----------------------------------------------------------------
+; Manufacturer Section
+;----------------------------------------------------------------
+[Manufacturer]
+"Kyocera"
+
+;----------------------------------------------------------------
+; Model Sections
+;----------------------------------------------------------------
+[Kyocera]
+"Kyocera TASKalfa 250ci NW-FAX"  = TA-250CI
+"Kyocera TASKalfa 300ci NW-FAX"  = TA-300CI
+"Kyocera TASKalfa 400ci NW-FAX"  = TA-400CI
+"Kyocera TASKalfa 500ci NW-FAX"  = TA-500CI
+"Kyocera CS 250ci NW-FAX"  = TA-250CI
+"Kyocera CS 300ci NW-FAX"  = TA-300CI
+"Kyocera CS 400ci NW-FAX"  = TA-400CI
+"Kyocera CS 500ci NW-FAX"  = TA-500CI
+
+;----------------------------------------------------------------
+; Install Sections for NT5.1 (XP)
+;----------------------------------------------------------------
+[TA-250CI]
+CopyFiles       = @KFK04110.MDX,WINXP,SPOOLER,ADRIF3,ADREDIT,HELP,ADREDIT_HELP
+DataFile        = KFK04110.MDX
+DataSection     = XPCORE
+AddReg          = FAX_ADDREG
+
+[TA-300CI]
+CopyFiles       = @KFK04210.MDX,WINXP,SPOOLER,ADRIF3,ADREDIT,HELP,ADREDIT_HELP
+DataFile        = KFK04210.MDX
+DataSection     = XPCORE
+AddReg          = FAX_ADDREG
+
+[TA-400CI]
+CopyFiles       = @KFK04310.MDX,WINXP,SPOOLER,ADRIF3,ADREDIT,HELP,ADREDIT_HELP
+DataFile        = KFK04310.MDX
+DataSection     = XPCORE
+AddReg          = FAX_ADDREG
+
+[TA-500CI]
+CopyFiles       = @KFK04410.MDX,WINXP,SPOOLER,ADRIF3,ADREDIT,HELP,ADREDIT_HELP
+DataFile        = KFK04410.MDX
+DataSection     = XPCORE
+AddReg          = FAX_ADDREG
+
+;----------------------------------------------------------------
+; Copy Sections
+;----------------------------------------------------------------
+
+; This should be used for NT User Mode Driver
+[WINXP]
+KFUC35AE.DLL
+KFUU35AE.DLL
+KFRG35AE.DLL
+KFRC35AE.DLL
+KFFA35AE.DLL
+KFFL35AE.DLL
+KFFX35AE.DLL
+;KCMV3D.INI
+
+[SPOOLER]
+KFM35AE.EXE
+KFR35AE.DLL
+NWFX35AE.INI
+KMPipe.dll
+
+[ADRIF3]
+KMADRIF3.DLL
+KMWAB.DLL
+KMDVLIT2.DLL
+KMSNMP2.DLL
+KMSNMP2.INI
+KMADRWS.DLL
+
+[ADREDIT]
+KFNMCPEDIT.DLL
+KFNMCPEDRES.DLL
+KFCPDEF.ini
+KFCPJA01.cpf
+KFCPJA02.cpf
+KFCPJA03.cpf
+KFCPJA04.cpf
+KFCPJA05.cpf
+KFCPJA06.cpf
+KFCPEN01.cpf
+KFCPEN02.cpf
+KFCPEN03.cpf
+KFCPEN04.cpf
+KFCPEN05.cpf
+KFCPFR01.cpf
+KFCPFR02.cpf
+KFCPFR03.cpf
+KFCPFR04.cpf
+KFCPFR05.cpf
+KFCPGE01.cpf
+KFCPGE02.cpf
+KFCPGE03.cpf
+KFCPGE04.cpf
+KFCPGE05.cpf
+KFCPIT01.cpf
+KFCPIT02.cpf
+KFCPIT03.cpf
+KFCPIT04.cpf
+KFCPIT05.cpf
+KFCPSP01.cpf
+KFCPSP02.cpf
+KFCPSP03.cpf
+KFCPSP04.cpf
+KFCPSP05.cpf
+KFCPSC01.cpf
+KFCPSC02.cpf
+KFCPSC03.cpf
+KFCPSC04.cpf
+KFCPSC05.cpf
+KFCPTC01.cpf
+KFCPTC02.cpf
+KFCPTC03.cpf
+KFCPTC04.cpf
+KFCPTC05.cpf
+KFCPKO01.cpf
+KFCPKO02.cpf
+KFCPKO03.cpf
+KFCPKO04.cpf
+KFCPKO05.cpf
+
+[HELP]
+KFHENG20.CHM
+KFHFRE20.CHM
+KFHGER20.CHM
+KFHITA20.CHM
+KFHSPA20.CHM
+KFHJPN20.CHM
+KFHKRE20.CHM
+KFHSCH20.CHM
+KFHTCH20.CHM
+KFHBRA20.CHM
+KFHCZE20.CHM
+KFHDAN20.CHM
+KFHDUT20.CHM
+KFHFIN20.CHM
+KFHHUN20.CHM
+KFHNOR20.CHM
+KFHPOL20.CHM
+KFHPOR20.CHM
+KFHRUS20.CHM
+KFHSWE20.CHM
+KFHTUR20.CHM
+KFHARA20.CHM
+KFHHEB20.CHM
+
+[ADREDIT_HELP]
+KFCPENG1.CHM
+KFCPFRE1.CHM
+KFCPGER1.CHM
+KFCPITA1.CHM
+KFCPSPA1.CHM
+KFCPJPN1.CHM
+KFCPKRE1.CHM
+KFCPSCH1.CHM
+KFCPTCH1.CHM
+KFCPBRA1.CHM
+KFCPCZE1.CHM
+KFCPDAN1.CHM
+KFCPDUT1.CHM
+KFCPFIN1.CHM
+KFCPHUN1.CHM
+KFCPLIT1.CHM
+KFCPNOR1.CHM
+KFCPPOL1.CHM
+KFCPPOR1.CHM
+KFCPRUS1.CHM
+KFCPSWE1.CHM
+KFCPTUR1.CHM
+KFCPARA1.CHM
+KFCPHEB1.CHM
+KFCPFAR1.CHM
+
+;----------------------------------------------------------------
+; Data Sections
+;
+; These sections contain data that is shared between devices.
+;
+;----------------------------------------------------------------
+;
+[XPCORE]
+DriverFile=KFUC35AE.DLL
+ConfigFile=KFUU35AE.DLL
+
+[FAX_ADDREG]
+;HKLM,"SOFTWARE\Kyocera\NetworkFax\Spooler","InstallPath",0,"%11%\spool\drivers\w32x86\3\KFNFMain.exe"
+;HKLM,"SOFTWARE\Kyocera\NetworkFax\Spooler","Version",0,"2.1"
+;HKLM,"SOFTWARE\Kyocera\NetworkFax\Spooler","WindowClassName",0,"KF_NWFAX_Class"
+;HKLM,"SOFTWARE\Kyocera\NetworkFax\Spooler","WindowName",0,"KF_NWFAX_Window"
+
+;
+; Call SetupSetDirectoryId with 66000 to set the target directory at runtime
+; (depending on which environment drivers are getting installed)
+;
+
+;----------------------------------------------------------------
+; Destination Information
+;----------------------------------------------------------------
+[DestinationDirs]
+DefaultDestDir=66000
+
+
+;----------------------------------------------------------------
+; Source Information
+;----------------------------------------------------------------
+;
+[SourceDisksNames]
+1 = %CDROM%,,,""
+
+[SourceDisksFiles]
+KFUC35AE.DLL     = 1
+KFUU35AE.DLL     = 1
+KFRG35AE.DLL     = 1
+KFRC35AE.DLL     = 1
+KFFA35AE.DLL     = 1
+KFFL35AE.DLL     = 1
+KFFX35AE.DLL     = 1
+KFM35AE.EXE      = 1
+KFR35AE.DLL      = 1
+KMADRIF3.DLL     = 1
+KMWAB.DLL        = 1
+KMDVLIT2.DLL     = 1
+KMSNMP2.DLL      = 1
+KMSNMP2.INI      = 1
+KMADRWS.DLL      = 1
+KFNMCPEDIT.DLL   = 1
+KFNMCPEDRES.DLL  = 1
+NWFX35AE.INI     = 1
+KMPipe.dll       = 1
+KFCPDEF.INI      = 1
+KFCPJA01.cpf     = 1
+KFCPJA02.cpf     = 1
+KFCPJA03.cpf     = 1
+KFCPJA04.cpf     = 1
+KFCPJA05.cpf     = 1
+KFCPJA06.cpf     = 1
+KFCPEN01.cpf     = 1
+KFCPEN02.cpf     = 1
+KFCPEN03.cpf     = 1
+KFCPEN04.cpf     = 1
+KFCPEN05.cpf     = 1
+KFCPFR01.cpf     = 1
+KFCPFR02.cpf     = 1
+KFCPFR03.cpf     = 1
+KFCPFR04.cpf     = 1
+KFCPFR05.cpf     = 1
+KFCPGE01.cpf     = 1
+KFCPGE02.cpf     = 1
+KFCPGE03.cpf     = 1
+KFCPGE04.cpf     = 1
+KFCPGE05.cpf     = 1
+KFCPIT01.cpf     = 1
+KFCPIT02.cpf     = 1
+KFCPIT03.cpf     = 1
+KFCPIT04.cpf     = 1
+KFCPIT05.cpf     = 1
+KFCPSP01.cpf     = 1
+KFCPSP02.cpf     = 1
+KFCPSP03.cpf     = 1
+KFCPSP04.cpf     = 1
+KFCPSP05.cpf     = 1
+KFCPSC01.cpf     = 1
+KFCPSC02.cpf     = 1
+KFCPSC03.cpf     = 1
+KFCPSC04.cpf     = 1
+KFCPSC05.cpf     = 1
+KFCPTC01.cpf     = 1
+KFCPTC02.cpf     = 1
+KFCPTC03.cpf     = 1
+KFCPTC04.cpf     = 1
+KFCPTC05.cpf     = 1
+KFCPKO01.cpf     = 1
+KFCPKO02.cpf     = 1
+KFCPKO03.cpf     = 1
+KFCPKO04.cpf     = 1
+KFCPKO05.cpf     = 1
+KFHENG20.CHM     = 1
+KFHFRE20.CHM     = 1
+KFHGER20.CHM     = 1
+KFHITA20.CHM     = 1
+KFHSPA20.CHM     = 1
+KFHJPN20.CHM     = 1
+KFHKRE20.CHM     = 1
+KFHSCH20.CHM     = 1
+KFHTCH20.CHM     = 1
+KFHBRA20.CHM     = 1
+KFHCZE20.CHM     = 1
+KFHDAN20.CHM     = 1
+KFHDUT20.CHM     = 1
+KFHFIN20.CHM     = 1
+KFHHUN20.CHM     = 1
+KFHNOR20.CHM     = 1
+KFHPOL20.CHM     = 1
+KFHPOR20.CHM     = 1
+KFHRUS20.CHM     = 1
+KFHSWE20.CHM     = 1
+KFHTUR20.CHM     = 1
+KFHARA20.CHM     = 1
+KFHHEB20.CHM     = 1
+KFCPENG1.CHM     = 1
+KFCPFRE1.CHM     = 1
+KFCPGER1.CHM     = 1
+KFCPITA1.CHM     = 1
+KFCPSPA1.CHM     = 1
+KFCPJPN1.CHM     = 1
+KFCPKRE1.CHM     = 1
+KFCPSCH1.CHM     = 1
+KFCPTCH1.CHM     = 1
+KFCPBRA1.CHM     = 1
+KFCPCZE1.CHM     = 1
+KFCPDAN1.CHM     = 1
+KFCPDUT1.CHM     = 1
+KFCPFIN1.CHM     = 1
+KFCPHUN1.CHM     = 1
+KFCPLIT1.CHM     = 1
+KFCPNOR1.CHM     = 1
+KFCPPOL1.CHM     = 1
+KFCPPOR1.CHM     = 1
+KFCPRUS1.CHM     = 1
+KFCPSWE1.CHM     = 1
+KFCPTUR1.CHM     = 1
+KFCPARA1.CHM     = 1
+KFCPHEB1.CHM     = 1
+KFCPFAR1.CHM     = 1
+KFK04110.MDX     = 1
+KFK04210.MDX     = 1
+KFK04310.MDX     = 1
+KFK04410.MDX     = 1
+;KCMV3D.INI       = 1
+
+;----------------------------------------------------------------
+; Localizable Strings
+;----------------------------------------------------------------
+[Strings]
+KMC       = "KYOCERA MITA Corporation"
+CDROM   = "NF_LIB"

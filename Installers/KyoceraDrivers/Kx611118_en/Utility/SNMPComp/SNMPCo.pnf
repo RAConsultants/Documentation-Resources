@@ -1,0 +1,70 @@
+
+[Version]
+Provider   = Kyocera
+Version  = 03/01/2012,1.8.1928
+
+[Information]
+PackageKey = SNMPCO
+PackageType = APP
+Category = DRIVER
+Name = "SNMP Component"
+Description = %STATUSMON_DESC%
+Location = 
+MinOSVersion = 5.0
+MaxOSVersion = 10.0
+Connection = 
+Attribute = HIDE
+Required = 
+Handler = DriverDll.dll
+
+[SourcePath]
+
+[TargetPath]
+SNMPCo_COPY = <SystemDir>\spool\drivers\w32x86\3
+SNMPCo_DEL = <SystemDir>\spool\drivers\w32x86\3
+
+[TargetPath.x64]
+SNMPCo_COPY = <SystemDir>\Spool\Drivers\x64\3
+SNMPCo_DEL = <SystemDir>\Spool\Drivers\x64\3
+
+[Install]
+CopyFiles = SNMPCo_COPY
+ExecFiles = AppInstall
+
+[Upgrade]
+CopyFiles = SNMPCo_COPY
+ExecFiles = AppInstall
+
+[Verify]
+VerifyApps = verApp
+
+[verApp]
+CompareVersion = VERIFY_FILE,"utility\SNMPComp\SNMP86.dll","<SystemDir>\spool\drivers\w32x86\3\SNMP86.dll"
+
+[verApp.x64]
+CompareVersion = VERIFY_FILE,"utility\SNMPComp\SNMP64.dll","<SystemDir>\Spool\Drivers\x64\3\SNMP64.dll"
+
+[SNMPCo_COPY]
+SNMP86.dll,,SNMP86.dll
+KmSNMPIF.ini,,KmSNMPIF.ini,COPY_NEW_FILE
+
+[SNMPCo_COPY.x64]
+SNMP64.dll,,SNMP64.dll
+KmSNMPIF.ini,,KmSNMPIF.ini,COPY_NEW_FILE
+
+[AppInstall]
+InstallCmd = regsvr32 /s "<SystemDir>\spool\drivers\w32x86\3\SNMP86.dll"
+
+[AppInstall.x64]
+InstallCmd = regsvr32 /s "<SystemDir>\Spool\Drivers\x64\3\SNMP64.dll"
+
+[Strings]
+LANG = "en"
+
+[Strings.u]
+STATUSMON_DESC = "Status Monitor"
+
+;eng
+[Strings.u.0009]
+STATUSMON_DESC = "Status Monitor"
+

@@ -1,0 +1,57 @@
+
+[Version]
+Provider   = Kyocera
+Version  = 08/20/2007,1.0.0823
+
+[Information]
+SourcePath = .
+ModelKey = 0
+
+[SourcePath]
+
+[TargetPath]
+SNMPCo_COPY = <SystemDir>\spool\drivers\w32x86\3
+SNMPCo_DEL = <SystemDir>\spool\drivers\w32x86\3
+
+[TargetPath.x64]
+SNMPCo_COPY = <SystemDir>\Spool\Drivers\x64\3
+SNMPCo_DEL = <SystemDir>\Spool\Drivers\x64\3
+
+[Install]
+CopyFiles = SNMPCo_COPY
+ExecFiles = AppInstall
+
+[Upgrade]
+CopyFiles = SNMPCo_COPY
+ExecFiles = AppInstall
+
+[Verify]
+VerifyApps = verApp
+
+[verApp]
+CompareVersion = VERIFY_FILE,"utility\SNMPComp\SNMPCo86.dll","<SystemDir>\spool\drivers\w32x86\3\SNMPCo86.dll"
+
+[verApp.x64]
+CompareVersion = VERIFY_FILE,"utility\SNMPComp\SNMPCo64.dll","<SystemDir>\Spool\Drivers\x64\3\SNMPCo64.dll"
+
+[SNMPCo_COPY]
+SNMPCo86.dll,,SNMPCo86.dll
+KMSNEN10.chm,,KMSNEN10.chm
+KSWTEN10.HLP,,KSWTEN10.HLP
+KMSNJP10.chm,,KMSNJP10.chm
+KSWTJP10.HLP,,KSWTJP10.HLP
+KmSNMPIF.ini,,KmSNMPIF.ini
+
+[SNMPCo_COPY.x64]
+SNMPCo64.dll,,SNMPCo64.dll
+KMSNEN10.chm,,KMSNEN10.chm
+KSWTEN10.HLP,,KSWTEN10.HLP
+KMSNJP10.chm,,KMSNJP10.chm
+KSWTJP10.HLP,,KSWTJP10.HLP
+KmSNMPIF.ini,,KmSNMPIF.ini
+
+[AppInstall]
+InstallCmd = regsvr32 /s "<SystemDir>\spool\drivers\w32x86\3\SNMPCo86.dll"
+
+[AppInstall.x64]
+InstallCmd = regsvr32 /s "<SystemDir>\Spool\Drivers\x64\3\SNMPCo64.dll"

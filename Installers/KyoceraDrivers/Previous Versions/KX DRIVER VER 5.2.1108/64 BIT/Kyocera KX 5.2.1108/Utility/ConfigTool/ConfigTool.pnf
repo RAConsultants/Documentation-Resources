@@ -1,0 +1,40 @@
+
+[Version]
+Provider = Kyocera
+Version  = 10/28/2010,3.2.1028
+
+[Information]
+SourcePath = .
+TargetPath = <SystemDir>\spool\drivers\w32x86\3
+
+[SourcePath]
+Default = .
+
+[TargetPath]
+KMPCT = <SystemDir>\spool\drivers\w32x86\3
+
+[TargetPath.x64]
+KMPCT = <SystemDir>\spool\drivers\x64\3
+
+[Install]
+CopyFiles = KMPCT
+
+[Upgrade]
+CopyFiles = KMPCT
+
+[Remove]
+DelFiles = KMPCT
+
+
+[Verify]
+VerifyApps = verApp
+
+[verApp]
+CompareVersion = VERIFY_FILE,"Utility\ConfigTool\KMPCT2M1.exe","<SystemDir>\spool\drivers\w32x86\3\KMPCT2M1.exe"
+
+[verApp.x64]
+CompareVersion = VERIFY_FILE,"Utility\ConfigTool\KMPCT2M1.exe","<SystemDir>\spool\drivers\x64\3\KMPCT2M1.exe"
+
+[KMPCT]
+KMPCT2M1.exe
+

@@ -1,0 +1,79 @@
+
+[Version]
+Provider = Kyocera
+Version  = 07/13/2007,2.0.0713
+
+[Information]
+SourcePath = .
+TargetPath = <MainTarget>
+
+[SourcePath]
+Default = .
+BMP = Setup
+
+[TargetPath]
+BMP = <MainTarget>\Setup
+
+[Install]
+DelLinks = CLEAN_LINKS
+DelItemARP = CLEAN_OLD_ARP
+CopyFiles = SEC1,BMP
+AddLinks = LINK1
+AddItemARP = ARP
+
+[Upgrade]
+DelLinks = CLEAN_LINKS
+DelItemARP = CLEAN_OLD_ARP
+CopyFiles = SEC1,BMP
+AddLinks = LINK1
+AddItemARP = ARP
+
+[Remove]
+DelLinks = CLEAN_LINKS
+DelItemARP = CLEAN_OLD_ARP
+DelFiles = BMP,SEC1
+DelLinks = LINK1
+DelItemARP = ARP
+DelDirs = DIRS
+
+[SEC1]
+KmUninstall.exe,,KmUninstall.exe,COPY_NEW_FILE
+KmInst32.exe,,KmInst32.exe,COPY_NEW_FILE
+KmInst64.exe,,KmInst64.exe,COPY_NEW_FILE
+KyoRm.ini,,KyoRm.ini,COPY_NEW_FILE
+KmInstall.ini
+KmInstall.str
+KmInst32.str
+Lang.dat
+
+[BMP]
+KxLogo.png
+
+[LINK1]
+%PRODUCT_NAME% = "<MainTarget>\KmUninstall.exe [-l <UiLanguage>]","<MainLink>","<MainTarget>\KmUninstall.exe",%LINK_DESC%
+
+[ARP]
+%DISPLAY_NAME%,%DISPLAY_NAME%,<MainTarget>\KmUninstall.exe -l <UiLanguage>,Kyocera Mita Corporation,<MainTarget>,<MainTarget>\KmUninstall.exe
+
+[CLEAN_LINKS]
+"REMOVE_BY_EXECUTABLE" = "KmUninstall.exe","<StartMenu>\Kyocera"
+
+[CLEAN_OLD_ARP]
+"REMOVE_BY_EXECUTABLE" = "KmUninstall.exe","Kyocera"		
+
+[CLEAN_LINKS.NT6]
+"REMOVE_BY_EXECUTABLE" = "KmUninstall.exe","<StartMenu>\Kyocera"
+"REMOVE_BY_EXECUTABLE" = "KmUninstallVista.exe","<StartMenu>\Kyocera"
+
+[CLEAN_OLD_ARP.NT6]
+"REMOVE_BY_EXECUTABLE" = "KmUninstall.exe","Kyocera"		
+"REMOVE_BY_EXECUTABLE" = "KmUninstallVista.exe","Kyocera"		
+
+[DIRS]
+<MainTarget>\Utility,REMOVE_ALL
+<MainLink>
+
+; Strings
+;================================================================================================================
+[StringTable]
+LoadString = KmInst32.str

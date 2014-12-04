@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IFPkgDescriptionDescription</key>
+	<string>Fast scalable distributed SCM (revision control, version control) system</string>
+	<key>IFPkgDescriptionTitle</key>
+	<string>mercurial 3.0.1-20140606</string>
+	<key>IFPkgDescriptionVersion</key>
+	<string>3.0.1-20140606</string>
+</dict>
+</plist>

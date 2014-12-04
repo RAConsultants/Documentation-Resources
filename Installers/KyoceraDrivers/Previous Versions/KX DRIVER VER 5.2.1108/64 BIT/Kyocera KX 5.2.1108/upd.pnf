@@ -1,0 +1,36 @@
+
+[Version]
+Provider = Kyocera
+Version  = 07/09/2007,4.2.1909
+
+[Information]
+SourcePath = .
+TargetPath = <MainTarget>
+
+[SourcePath]
+
+[TargetPath]
+
+[Install]
+;AddPrinterDriver = AddPrnDrv
+
+[Remove]
+
+[Verify]
+VerifyDriver = KxVer
+
+[AddPrnDrv]
+;AddPrinterDriver = 
+
+[KxVer]
+; CompareVersion = COMMAND,"INF file for the driver"
+;			COMMAND = VERIFY_PRN_CONFIG,VERIFY_PRN_DATA
+;     TARGET_FILE = DRV_DRIVER,DRV_CONFIG
+CompareVersion = VERIFY_PRN_CONFIG,"32bit\XP and newer\OEMSETUP.INF"
+
+[KxVer.x64]
+; CompareVersion = COMMAND,"INF file for the driver"
+;			COMMAND = VERIFY_PRN_CONFIG,VERIFY_PRN_DATA
+;     TARGET_FILE = DRV_DRIVER,DRV_CONFIG
+CompareVersion = VERIFY_PRN_CONFIG,"64bit\XP and newer\OEMSETUP.INF"
+

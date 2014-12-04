@@ -1,0 +1,133 @@
+
+[Version]
+Provider   = Kyocera
+Version  = 03/01/2012,1.8.1928
+
+[Information]
+PackageKey = STATUSMON
+PackageType = APP
+Category = DRIVER
+Name = "Status Moniter"
+Description = %STATUSMON_DESC%
+Location = 
+MinOSVersion = 5.0
+MaxOSVersion = 10.0
+Connection = 
+Attribute = HIDE
+Required = 
+Handler = DriverDll.dll
+
+[SourcePath]
+
+[TargetPath]
+STATUSMON_COPY = <SystemDir>\spool\drivers\w32x86\3
+STATUSMON_DEL = <SystemDir>\spool\drivers\w32x86\3
+
+[TargetPath.x64]
+STATUSMON_COPY = <SystemDir>\Spool\Drivers\x64\3
+STATUSMON_DEL = <SystemDir>\Spool\Drivers\x64\3
+
+[Install]
+CopyFiles = STATUSMON_COPY
+
+
+[Upgrade]
+CopyFiles = STATUSMON_COPY
+
+[Remove]
+DelFiles = STATUSMON_COPY
+
+
+[Verify]
+VerifyApps = verApp
+
+[verApp]
+CompareVersion = VERIFY_FILE,"Utility\Status Monitor\KMSTMVM.exe","<SystemDir>\spool\drivers\w32x86\3\KMSTMVM.exe"
+
+[verApp.x64]
+CompareVersion = VERIFY_FILE,"Utility\Status Monitor\KMSTMVM.exe","<SystemDir>\Spool\Drivers\x64\3\KMSTMVM.exe"
+
+[STATUSMON_COPY]
+km313110.dat,,km313110.dat
+km313210.dat,,km313210.dat
+km313310.dat,,km313310.dat
+km313410.dat,,km313410.dat
+km313510.dat,,km313510.dat
+km313610.dat,,km313610.dat
+km313710.dat,,km313710.dat
+km313810.dat,,km313810.dat
+km313910.dat,,km313910.dat
+km314010.dat,,km314010.dat
+km314110.dat,,km314110.dat
+km314210.dat,,km314210.dat
+km322810.dat,,km322810.dat
+km322910.dat,,km322910.dat
+km323010.dat,,km323010.dat
+km323110.dat,,km323110.dat
+km323210.dat,,km323210.dat
+km323410.dat,,km323410.dat
+km323510.dat,,km323510.dat
+km323710.dat,,km323710.dat
+km323810.dat,,km323810.dat
+km323910.dat,,km323910.dat
+km324010.dat,,km324010.dat
+km324110.dat,,km324110.dat
+km324210.dat,,km324210.dat
+km324310.dat,,km324310.dat
+km324410.dat,,km324410.dat
+km324510.dat,,km324510.dat
+km324810.dat,,km324810.dat
+km324910.dat,,km324910.dat
+KMSTMNET.exe,,KMSTMNET.exe,COPY_NEW_FILE
+KMSTMNET.ini,,KMSTMNET.ini,COPY_NEW_FILE_CHECK_USING_SYSTEM_SECTION
+KMSTMNWS.ini,,KMSTMNWS.ini,COPY_NEW_FILE_CHECK_USING_SYSTEM_SECTION
+KMSTMVM.exe,,KMSTMVM.exe,COPY_NEW_FILE
+
+[STATUSMON_COPY.x64]
+km313110.dat,,km313110.dat
+km313210.dat,,km313210.dat
+km313310.dat,,km313310.dat
+km313410.dat,,km313410.dat
+km313510.dat,,km313510.dat
+km313610.dat,,km313610.dat
+km313710.dat,,km313710.dat
+km313810.dat,,km313810.dat
+km313910.dat,,km313910.dat
+km314010.dat,,km314010.dat
+km314110.dat,,km314110.dat
+km314210.dat,,km314210.dat
+km322810.dat,,km322810.dat
+km322910.dat,,km322910.dat
+km323010.dat,,km323010.dat
+km323110.dat,,km323110.dat
+km323210.dat,,km323210.dat
+km323410.dat,,km323410.dat
+km323510.dat,,km323510.dat
+km323710.dat,,km323710.dat
+km323810.dat,,km323810.dat
+km323910.dat,,km323910.dat
+km324010.dat,,km324010.dat
+km324110.dat,,km324110.dat
+km324210.dat,,km324210.dat
+km324310.dat,,km324310.dat
+km324410.dat,,km324410.dat
+km324510.dat,,km324510.dat
+km324810.dat,,km324810.dat
+km324910.dat,,km324910.dat
+KMSTMNET.exe,,KMSTMNET.exe,COPY_NEW_FILE
+KMSTMNET.ini,,KMSTMNET.ini,COPY_NEW_FILE_CHECK_USING_SYSTEM_SECTION
+KMSTMNWS.ini,,KMSTMNWS.ini,COPY_NEW_FILE_CHECK_USING_SYSTEM_SECTION
+KMSTMVM.exe,,KMSTMVM.exe,COPY_NEW_FILE
+
+
+
+[Strings]
+LANG = "en"
+
+[Strings.u]
+STATUSMON_DESC = "Status Monitor"
+
+;eng
+[Strings.u.0009]
+STATUSMON_DESC = "Status Monitor"
+

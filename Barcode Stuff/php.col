@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colorizer xmlns="http://www.aptana.com/2007/colorizer/1.0" background="rgb(63,63,63)" caret-color="rgb(222,222,203)" folding-background="rgb(63,63,63)" folding-foreground="rgb(222,222,203)" language="text/php" line-highlight="rgb(69,69,69)" selection-background="rgb(163,188,174)" selection-foreground="rgb(0,0,0)">
+<category name="WHITESPACE" style="WHITESPACE"/>
+<style foreground="rgb(127,127,127)" id="WHITESPACE"/>
+<category name="LITERAL" style="LITERAL">
+<token style="LITERAL_NUMBER" type="NUMBER"/>
+</category>
+<style foreground="rgb(143,226,143)" id="LITERAL"/>
+<style foreground="rgb(231,126,126)" id="LITERAL_NUMBER"/>
+<category name="KEYWORD" style="KEYWORD">
+<token style="KEYWORD_FALSE" type="FALSE"/>
+<token style="KEYWORD_NULL" type="NULL"/>
+<token style="KEYWORD_TRUE" type="TRUE"/>
+</category>
+<style foreground="rgb(124,183,241)" id="KEYWORD"/>
+<style foreground="rgb(227,142,185)" id="KEYWORD_FALSE"/>
+<style foreground="rgb(227,142,185)" id="KEYWORD_NULL"/>
+<style foreground="rgb(227,142,185)" id="KEYWORD_TRUE"/>
+<category name="ERROR" style="ERROR"/>
+<style foreground="rgb(231,126,126)" id="ERROR"/>
+<category name="SUPERGLOBAL" style="SUPERGLOBAL"/>
+<style font-weight="bold" foreground="rgb(124,183,241)" id="SUPERGLOBAL"/>
+<category name="IDENTIFIER" style="IDENTIFIER">
+<token style="IDENTIFIER_VARIABLE" type="VARIABLE"/>
+</category>
+<style foreground="rgb(162,236,238)" id="IDENTIFIER"/>
+<style foreground="rgb(240,235,142)" id="IDENTIFIER_VARIABLE"/>
+<category name="PUNCTUATOR" style="PUNCTUATOR">
+<token style="PUNCTUATOR_OPEN_TAG" type="OPEN_TAG"/>
+<token style="PUNCTUATOR_CURLY_CLOSE" type="CURLY_CLOSE"/>
+<token style="PUNCTUATOR_CURLY_OPEN" type="CURLY_OPEN"/>
+<token style="PUNCTUATOR_CLOSE_TAG" type="CLOSE_TAG"/>
+</category>
+<style foreground="rgb(222,222,203)" id="PUNCTUATOR"/>
+<style font-weight="bold" foreground="rgb(227,142,185)" id="PUNCTUATOR_OPEN_TAG"/>
+<style font-weight="bold" foreground="rgb(222,222,203)" id="PUNCTUATOR_CURLY_CLOSE"/>
+<style font-weight="bold" foreground="rgb(222,222,203)" id="PUNCTUATOR_CURLY_OPEN"/>
+<style font-weight="bold" foreground="rgb(227,142,185)" id="PUNCTUATOR_CLOSE_TAG"/>
+</colorizer>
